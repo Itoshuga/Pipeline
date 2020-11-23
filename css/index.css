@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*-------------- Index Page --------------*/
+
+body {
+    font-family: 'Alata', sans-serif;
+}
+
+button {
+    font-family: 'Alata', sans-serif;
+}
+
+header {
+    display: flex;
+    height: 10vh;
+    width: 80%;
+    margin: auto;
+    align-items: center;
+}
+
+.logo-container, .nav-links{
+    display: flex;
+}
+
+.logo-container img {
+    width: 5vh;
+}
+
+
+.logo-container {
+    flex: 1;
+}
+
+.logo {
+    font-weight: 400;
+    margin: 10px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: overline;
+}
+
+nav {
+    flex: 2;
+}
+
+.nav-links {
+    justify-content: space-around;
+}
+
+.nav-link {
+    color: #5f5f79;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.presentation {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    min-height: 80vh;
+    align-items: center;
+}
+
+.introduction {
+    flex: 1;
+}
+
+.intro-text h1 {
+    font-size: 44px;
+    font-weight: 500;
+    background: linear-gradient(to right, #494964, #6F6F89);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intro-text p {
+    margin-top: 5px;
+    font-size: 22px;
+    color: #585772;
+}
+
+.cta {
+    padding: 50px 0px 0px 0px;
+}
+
+.cta-login {
+    border: 2px solid #C36CBB;
+    background: transparent;
+    color: #C36CBB;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none;
+}
+
+.cta-signup {
+    background: #C36CBB;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    color: white;
+    margin: 0px 0px 0px 30px;
+    outline: none;
+}
+
+.cover {
+    flex: 1;
+}
+
+.cover img {
+    height: 100%;
+    filter: drop-shadow(0px 5px 3px black);
+    animation: drop 1.5s ease;
+}
+
+.big-circle {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: -1;
+    opacity: 0.8;
+    height: 80%;
+}
+
+.mid-circle {
+    position: absolute;
+    top: 30%;
+    right: 30%;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.small-circle {
+    position: absolute;
+    bottom: 0%;
+    left: 17%;
+    z-index: -1;
+}
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 14px;
+    padding: 0px 50px 0px 0px;
+    color: silver;
+    -webkit-user-select: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .nav-link {
+        flex: 1;
+    }
+    .presentation {
+        flex-direction: column;
+    }
+    .introduction {
+        margin-top: 5vh;
+        text-align: center;
+    }
+    .intro-text h1 {
+        font-size: 30px;
+    }
+    .intro-text p {
+        font-size: 18px;
+    }
+    .cta {
+        padding: 10px 0px 0px 0px;
+    }
+    .cover img {
+        padding-top: 10%;
+        height: 60%;
+    }
+    .small-circle, .mid-circle, .big-circle {
+        opacity: 0.2;
+    }
+    footer {
+        margin-top: 50px;
+        text-align: left;
+    }
+}
+
+/*-------------- About Page --------------*/
+
+.form {
+    flex: 0.5;
+    position: relative;
+    margin-right: 10%;
+    height: 50px;
+    overflow: hidden;
+}
+
+.form input {
+    width: 100%;
+    height: 100%;
+    color: #595F6E;
+    padding-top: 20px;
+    border: none;
+    outline: none;
+}
+
+.form label {
+    position: absolute;
+    bottom: 0px;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+}
+
+.form label::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -1px;
+    height: 100%;
+    width: 100%;
+    border-bottom: 3px solid #C36CBB;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.content-name {
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+
+.form input:focus + .label-name .content-name, 
+.form input:valid + .label-name .content-name {
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: #C36CBB;
+}
+
+.form input:focus + .label-name::after, 
+.form input:valid + .label-name::after {
+    transform: translateX(0%);
+}
